@@ -12,8 +12,7 @@ const FAQSection = () => {
           {t('frequently-asked')}
         </h2>
         <p className="text-center text-xl">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
+          Find answers to common questions about ClearDistill's AI-driven market intelligence platform
         </p>
         <div className="flex items-center justify-center">
           <div className="grid grid-cols-1 gap-2">

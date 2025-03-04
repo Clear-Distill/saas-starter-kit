@@ -1,46 +1,26 @@
 [
   {
-    "name": "Create account",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Market Research & Competitive Analysis",
+    "description": "Utilize AI algorithms to analyze vast datasets, uncovering market trends, consumer behaviors, and competitor strategies, enabling you to identify opportunities and threats within your industry."
   },
   {
-    "name": "Sign in with Email and Password",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Internal Data Analysis",
+    "description": "Employ advanced AI tools to process and interpret your organization's internal data, revealing patterns and insights that drive efficiency and growth."
   },
   {
-    "name": "Sign in with Magic link",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "AI-Powered Agents & Conversational AI",
+    "description": "Interact seamlessly with data through intelligent AI agents and conversational interfaces, facilitating real-time information retrieval and decision support."
   },
   {
-    "name": "Sign in with SAML SSO",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Expert Reports & Executive Summaries",
+    "description": "Access meticulously curated reports and executive summaries that distill complex data into actionable insights, enabling swift and informed decision-making."
   },
   {
-    "name": "Directory Sync (SCIM)",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Audio Experiences & Podcasts",
+    "description": "Stay updated with the latest industry developments through our AI-generated audio content, including narrated reports and expert discussions, perfect for on-the-go learning."
   },
   {
-    "name": "Update account",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Invite users to the team",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Manage team members",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Update team settings",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Webhooks & Events",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-  },
-  {
-    "name": "Create team",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    "name": "Gap Analysis & Strategic Recommendations",
+    "description": "Leverage AI-driven analyses to identify market gaps and receive tailored recommendations on areas of focus, helping you align your strategies with market demands and opportunities."
   }
 ]

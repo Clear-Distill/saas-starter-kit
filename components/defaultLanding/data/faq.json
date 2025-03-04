@@ -1,14 +1,26 @@
 [
   {
-    "question": "What is BoxyHQ?",
-    "answer": "Enterprise readiness for B2B SaaS, straight out of the box."
+    "question": "What is ClearDistill?",
+    "answer": "ClearDistill is an AI-driven platform designed to empower businesses with comprehensive market intelligence and data analysis. Our suite of AI-powered services facilitates informed decision-making and strategic planning across various industries."
   },
   {
-    "question": "What BoxyHQ offers?",
-    "answer": "At BoxyHQ we enable you to add plug-and-play enterprise-ready features to your SaaS product. Show enterprise customers and InfoSec teams you are ready to pass their processes with flying colors. We are open-source and free!"
+    "question": "How does ClearDistill help with market research?",
+    "answer": "ClearDistill utilizes AI algorithms to analyze vast datasets, uncovering market trends, consumer behaviors, and competitor strategies. This enables you to identify opportunities and threats within your industry, make data-driven decisions, and stay ahead of market changes."
   },
   {
-    "question": "Is BoxyHQ offers developer security tools?",
-    "answer": "We have curated a list of awesome open-source developer security tools.It includes security principles and controls relevant to popular compliance certifications (like ISO27001, SOC2, MVSP, etc.)"
+    "question": "What types of reports does ClearDistill provide?",
+    "answer": "ClearDistill provides meticulously curated reports and executive summaries that distill complex data into actionable insights. These include market analysis reports, competitive intelligence, industry trend reports, gap analysis, and strategic recommendation documents tailored to your specific business needs."
+  },
+  {
+    "question": "How can I access ClearDistill's audio content?",
+    "answer": "ClearDistill offers AI-generated audio content, including narrated reports and expert discussions, accessible through our platform. These audio experiences are perfect for on-the-go learning and staying updated with the latest industry developments without having to read lengthy reports."
+  },
+  {
+    "question": "Can ClearDistill analyze my company's internal data?",
+    "answer": "Yes, ClearDistill employs advanced AI tools to process and interpret your organization's internal data, revealing patterns and insights that drive efficiency and growth. Our platform can integrate with your existing data sources while maintaining strict security and privacy standards."
+  },
+  {
+    "question": "How do the AI-powered agents work?",
+    "answer": "ClearDistill's AI agents and conversational interfaces allow you to interact seamlessly with data, facilitating real-time information retrieval and decision support. You can ask questions in natural language and receive instant, accurate responses based on your market data and industry insights."
   }
 ]

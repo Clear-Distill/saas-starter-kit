@@ -1,32 +1,41 @@
 [
   {
-    "amount": "30k",
-    "currency": "USD",
+    "amount": "499",
+    "currency": "$",
     "duration": "month",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "description": "Essential plan for small businesses looking to gain market insights and competitive intelligence.",
     "benefits": [
-      "Up to 20 users.",
-      "Free storage upto 1GB",
-      "Lifetime validity"
+      "Access to market research reports",
+      "Basic competitive analysis",
+      "1 industry podcast per month",
+      "Up to 5 users"
     ]
   },
   {
-    "amount": "120k",
-    "currency": "USD",
+    "amount": "999",
+    "currency": "$",
     "duration": "month",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "benefits": ["Up to 500 users.", "Storage upto 50GB", "24*7 support"]
+    "description": "Professional plan for growing businesses that need comprehensive market intelligence and data analysis.",
+    "benefits": [
+      "All Essential features",
+      "Advanced internal data analysis",
+      "AI-powered conversational agents",
+      "Executive summaries",
+      "Up to 15 users"
+    ]
   },
   {
-    "amount": "350k",
-    "currency": "USD",
+    "amount": "2499",
+    "currency": "$",
     "duration": "month",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "description": "Enterprise plan for organizations requiring in-depth market intelligence, custom reports, and strategic recommendations.",
     "benefits": [
-      "Up to 1000 users.",
-      "Storage upto 100GB",
-      "24*7 support",
-      "Data backups"
+      "All Professional features",
+      "Custom industry reports",
+      "Strategic gap analysis",
+      "Tailored recommendations",
+      "Priority support",
+      "Unlimited users"
     ]
   }
 ]
