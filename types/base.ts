@@ -71,6 +71,7 @@ export interface TeamFeature {
   auditLog: boolean;
   webhook: boolean;
   apiKey: boolean;
+  reports: boolean;
   payments: boolean;
   deleteTeam: boolean;
 }

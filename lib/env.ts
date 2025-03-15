@@ -98,6 +98,7 @@ const env = {
     webhook: process.env.FEATURE_TEAM_WEBHOOK !== 'false',
     apiKey: process.env.FEATURE_TEAM_API_KEY !== 'false',
     auditLog: process.env.FEATURE_TEAM_AUDIT_LOG !== 'false',
+    reports: process.env.FEATURE_TEAM_REPORTS !== 'false',
     payments:
       process.env.FEATURE_TEAM_PAYMENTS === 'false'
         ? false

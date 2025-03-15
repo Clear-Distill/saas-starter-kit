@@ -294,19 +294,23 @@ const handlePUT = async (req: NextApiRequest, res: NextApiResponse) => {
     }
   }
 
-  const teamMember = await addTeamMember(
-    invitation.team.id,
-    session?.user?.id as string,
-    invitation.role
-  );
-
-  await sendEvent(invitation.team.id, 'member.created', teamMember);
-
-  if (invitation.sentViaEmail) {
-    await deleteInvitation({ token: inviteToken });
+  try {
+    const teamMember = await addTeamMember(
+      invitation.team.id,
+      session?.user?.id as string,
+      invitation.role
+    );
+    
+    await sendEvent(invitation.team.id, 'member.created', teamMember);
+    
+    if (invitation.sentViaEmail) {
+      await deleteInvitation({ token: inviteToken });
+    }
+    
+    recordMetric('member.created');
+    
+    res.status(204).end();
+  } catch (error: any) {
+    throw new ApiError(400, `Failed to add team member: ${error.message}`);
   }
-
-  recordMetric('member.created');
-
-  res.status(204).end();
 };

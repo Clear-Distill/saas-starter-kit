@@ -14,18 +14,41 @@ export const createTeam = async (param: {
 }) => {
   const { userId, name, slug } = param;
 
-  const team = await prisma.team.create({
-    data: {
-      name,
-      slug,
+  // First check if the user exists to avoid foreign key constraint violation
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userId,
     },
   });
 
-  await addTeamMember(team.id, userId, Role.OWNER);
+  if (!user) {
+    throw new Error(`User with ID ${userId} not found. Cannot create team.`);
+  }
 
-  await findOrCreateApp(team.name, team.id);
+  // Use a transaction to ensure both team creation and member addition succeed or fail together
+  return await prisma.$transaction(async (tx) => {
+    // Create the team
+    const team = await tx.team.create({
+      data: {
+        name,
+        slug,
+      },
+    });
 
-  return team;
+    // Add the user as a team member with OWNER role
+    await tx.teamMember.create({
+      data: {
+        teamId: team.id,
+        userId: userId,
+        role: Role.OWNER,
+      },
+    });
+
+    // Create the app outside the transaction since it's an external operation
+    await findOrCreateApp(team.name, team.id);
+
+    return team;
+  });
 };
 
 export const getByCustomerId = async (
@@ -55,6 +78,17 @@ export const addTeamMember = async (
   userId: string,
   role: Role
 ) => {
+  // First check if the user exists to avoid foreign key constraint violation
+  const user = await prisma.user.findUnique({
+    where: {
+      id: userId,
+    },
+  });
+
+  if (!user) {
+    throw new Error(`User with ID ${userId} not found. Cannot add to team.`);
+  }
+
   return await prisma.teamMember.upsert({
     create: {
       teamId,

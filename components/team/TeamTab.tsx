@@ -1,11 +1,15 @@
 import {
   Cog6ToothIcon,
   DocumentMagnifyingGlassIcon,
+  DocumentTextIcon,
   KeyIcon,
   PaperAirplaneIcon,
   ShieldExclamationIcon,
   UserPlusIcon,
   BanknotesIcon,
+  ChartBarIcon,
+  ChatBubbleLeftRightIcon,
+  DocumentDuplicateIcon,
 } from '@heroicons/react/24/outline';
 import type { Team } from '@prisma/client';
 import classNames from 'classnames';
@@ -24,6 +28,30 @@ const TeamTab = ({ activeTab, team, heading, teamFeatures }: TeamTabProps) => {
   const { canAccess } = useCanAccess();
 
   const navigations = [
+    {
+      name: 'Dashboard',
+      href: `/teams/${team.slug}/dashboard`,
+      active: activeTab === 'dashboard',
+      icon: ChartBarIcon,
+    },
+    {
+      name: 'Chat History',
+      href: `/teams/${team.slug}/chat/history`,
+      active: activeTab === 'chat',
+      icon: ChatBubbleLeftRightIcon,
+    },
+    {
+      name: 'Reports',
+      href: `/teams/${team.slug}/reports`,
+      active: activeTab === 'reports',
+      icon: DocumentTextIcon,
+    },
+    {
+      name: 'My Documents',
+      href: `/teams/${team.slug}/my-documents`,
+      active: activeTab === 'my-documents',
+      icon: DocumentDuplicateIcon,
+    },
     {
       name: 'Settings',
       href: `/teams/${team.slug}/settings`,

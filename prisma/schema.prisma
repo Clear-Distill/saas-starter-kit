@@ -1,4 +1,4 @@
-generator client {
+ generator client {
   provider = "prisma-client-js"
 }
 
@@ -70,20 +70,81 @@ model User {
 }
 
 model Team {
-  id              String       @id @default(uuid())
-  name            String
-  slug            String       @unique
-  domain          String?      @unique
-  defaultRole     Role         @default(MEMBER)
-  billingId       String?
-  billingProvider String?
-  createdAt       DateTime     @default(now())
-  updatedAt       DateTime     @default(now())
+  id                String       @id @default(uuid())
+  name              String
+  slug              String       @unique
+  domain            String?      @unique
+  defaultRole       Role         @default(MEMBER)
+  billingId         String?
+  billingProvider   String?
+  createdAt         DateTime     @default(now())
+  updatedAt         DateTime     @default(now())
+  
+  // NEW optional fields for Org-level AI references
+  conversationApiOrg String?
+  llmApiOrg          String?
+
+  // Relations
   members         TeamMember[]
   invitations     Invitation[]
   apiKeys         ApiKey[]
+  // NEW relations for documents & reports
+  documents       Document[]
+  reports         Report[]
 
   @@index([billingId])
+}
+
+// Report model for storing report data
+model Report {
+  id          String   @id @default(uuid())
+  teamId      String
+  title       String
+  description String?
+  // store 4-5 lines from Key insights.txt here
+  keyInsights String?
+
+  // store entire metadata.json if you like, e.g. { author, publishedDate, disclaimers, etc. }
+  metadata    Json?
+
+  // optional references to separate conversation/LLM for a single report
+  conversationApiReport String?
+  llmApiReport          String?
+
+  // Timestamps
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+
+  // Relations
+  team        Team     @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  documents   Document[] // all files that specifically belong to this report
+
+  @@index([teamId])
+}
+
+// Unified Document/File model for storing files
+model Document {
+  id        String   @id @default(uuid())
+  teamId    String
+  reportId  String?  // null => belongs to the Team in general, not a specific report
+
+  // Basic file info
+  name      String      // "report.pdf" or "podcast.mp3" or "invoice.docx", etc.
+  fileType  String      // e.g., "pdf", "mp3", "txt", "json"
+  url       String      // location where the file is stored (S3, local, etc.)
+  size      Int?        // optional: size in bytes
+  metadata  Json?       // optional: any additional file info
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+
+  // Relations
+  team      Team    @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  report    Report? @relation(fields: [reportId], references: [id], onDelete: Cascade)
+
+  @@index([teamId])
+  @@index([reportId])
 }
 
 model TeamMember {
